@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useCookies } from "react-cookie";
-import dotenv from 'dotenv'
-
 
 interface Props {
   ReactServerHost: string;
@@ -13,7 +11,7 @@ interface authData {
 }
 
 const Auth = ({ ReactServerHost }: Props) => {
-  const [cockies, setCockies, removeCookie] = useCookies<string>([]);
+  const [, setCookies,] = useCookies<string>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLogin, setIsLogin] = useState(false);
   const [authData, setAuthData] = useState<authData>({
@@ -52,8 +50,8 @@ const Auth = ({ ReactServerHost }: Props) => {
     if (error) {
       setError(data.detail);
     } else {
-      setCockies("Email", data.email);
-      setCockies("AuthToken", data.authToken);
+      setCookies("Email", data.email);
+      setCookies("AuthToken", data.authToken);
 
       window.location.reload();
     }

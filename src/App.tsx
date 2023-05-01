@@ -8,7 +8,7 @@ import { useCookies } from "react-cookie";
 function App() {
   const ReactServerHost = "todo-app-server-production-686b.up.railway.app";
 
-  const [cookies, setCookie, removeCookie] = useCookies<string>([]);
+  const [cookies,,] = useCookies<string>([]);
   const authToken = cookies.AuthToken;
   const userEmail = cookies.Email;
   const [tasks, setTasks] = useState<Task[] | null>(null);

@@ -21,6 +21,7 @@ const Modal = ({
   const editMode = mode === "edit" ? true : false;
   const [cookies] = useCookies<string>([]);
 
+
   const [data, setData] = React.useState({
     user_email: editMode ? task?.user_email : cookies.Email,
     title: mode === "edit" ? task?.title : "",

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ListHeader = ({ listName, getData, ReactServerHost }: Props) => {
-  const [cockies, setCockies, removeCookie] = useCookies<string>([]);
+  const [,,removeCookie] = useCookies<string>([]);
   const [isOpen, setIsOpen] = useState(false);
   const signOut = () => {
     removeCookie("Email");
